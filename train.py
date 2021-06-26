@@ -43,4 +43,7 @@ model.add(Dropout(0.2))
 model.add(Dense(y.shape[1], activation='softmax'))
 model.compile(loss='categorical_crossentropy', optimizer='adam')
 
+model.fit(X,y,epochs=50,batch_size=128)
+
+model.save('textmodel1.h5')
 
