@@ -53,6 +53,6 @@ print( "\nDone.")
 '''
 Have done only 50 epoch but still it was able to generate some sentences, it has learned the english language from scratch and was
 able to generate some sentences.
-isn't cool how computers were able to generate text generation from nowhere
+isn't cool how computers were able to generate sentences from nowhere
 
 '''
