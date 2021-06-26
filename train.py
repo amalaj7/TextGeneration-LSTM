@@ -3,7 +3,6 @@ from keras.models import Sequential
 from keras.layers import Dense
 from keras.layers import Dropout
 from keras.layers import LSTM
-from keras.callbacks import ModelCheckpoint
 from keras.utils import np_utils
 
 filename = "wonderland.txt"
@@ -34,7 +33,7 @@ X = numpy.reshape(dataX, (n_patterns, seq_length, 1))
 X = X / float(n_vocab)
 y = np_utils.to_categorical(dataY)
 
-# LSTM
+# LSTM Model Creation
 model = Sequential()
 model.add(LSTM(512, input_shape=(X.shape[1], X.shape[2]), return_sequences=True))
 model.add(Dropout(0.2))
@@ -43,7 +42,9 @@ model.add(Dropout(0.2))
 model.add(Dense(y.shape[1], activation='softmax'))
 model.compile(loss='categorical_crossentropy', optimizer='adam')
 
+# Only done 50 epochs , increase for more accurate text
 model.fit(X,y,epochs=50,batch_size=128)
 
+# To save the model
 model.save('textmodel.h5')
 
