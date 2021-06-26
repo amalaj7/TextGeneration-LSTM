@@ -49,3 +49,10 @@ for i in range(1000):
 	pattern.append(index)
 	pattern = pattern[1:len(pattern)]
 print( "\nDone.")
+
+'''
+Have done only 50 epoch but still it was able to generate some sentences, it has learned the english language from scratch and was
+able to generate some sentences.
+isn't cool how computers were able to generate text generation from nowhere
+
+'''
